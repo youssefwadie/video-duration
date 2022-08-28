@@ -68,4 +68,4 @@ traverse the file system tree to calculate the total videos' duration
 ---
 The functionality can be easily extended, just implement your own `FileScanner`.  
 see the [sample](/src/main/java/com/github/youssefwadie/durationcalculator/core/BasicScannersProvider.java#L8) and provide it to
-the `FileWalker`, [here](/src/main/java/com/github/youssefwadie/durationcalculator/cli/Main.java#L13)
+the `FileWalker`, [here](/src/main/java/com/github/youssefwadie/durationcalculator/cli/Main.java#L21)
