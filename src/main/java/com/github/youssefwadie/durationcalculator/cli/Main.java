@@ -11,6 +11,9 @@ import java.util.Optional;
 public class Main {
     private static final String HEADER = "traverse the file system tree to calculate the total videos' duration";
     public static final String APP_NAME = "videos-duration";
+    public static final String[] DEFAULT_FILE_TYPES = new String[]{"mp4", "mkv"};
+    private static final Path DEFAULT_STARTING_PATH = Path.of("");
+    private static final int DEFAULT_MAXIMUM_DEPTH = Integer.MAX_VALUE;
 
     public static void main(String[] args) throws ParseException, IOException {
         Optional<TraversalDetails> traversalDetails = parseArgs(args);
@@ -24,7 +27,8 @@ public class Main {
 
     private static Optional<TraversalDetails> parseArgs(String... args) throws ParseException {
         final Option filesAssociationsOption = Option.builder()
-                .option("t").longOpt("types").argName("file types").desc("file types to consider, default is mp4 and mkv")
+                .option("t").longOpt("types").argName("file-types").desc("file types to be scanned," +
+                        " multiple values whitespace separated, default is mp4 and mkv")
                 .numberOfArgs(Option.UNLIMITED_VALUES)
                 .valueSeparator(' ')
                 .build();
@@ -37,11 +41,13 @@ public class Main {
 
         final Option pathOption = Option.builder()
                 .option("p").longOpt("path").hasArg()
-                .desc("starting path to traverse").build();
+                .argName("starting-path")
+                .desc("starting path to traverse, default the current path").build();
 
         final Option depthOption = Option.builder()
                 .option("d").longOpt("depth").hasArg()
-                .desc("maximum depth").type(Integer.TYPE).build();
+                .argName("depth").desc("maximum depth in the traversal, default is the maximum possible depth")
+                .type(Integer.TYPE).build();
 
         final Option helpOption = Option.builder().
                 option("h").longOpt("help").hasArg(false)
@@ -63,17 +69,18 @@ public class Main {
             formatter.printHelp(Main.APP_NAME, Main.HEADER, options, "", true);
             return Optional.empty();
         }
+
         String[] filesAssociations = cmd.hasOption(filesAssociationsOption) ?
-                cmd.getOptionValues(filesAssociationsOption) : new String[]{"mp4", "mkv"};
+                cmd.getOptionValues(filesAssociationsOption) : DEFAULT_FILE_TYPES;
 
         boolean verbose = cmd.hasOption(verboseOption);
 
         Path startingPath = (cmd.hasOption(pathOption) ?
-                Path.of(cmd.getOptionValue(pathOption)) : Path.of(""))
+                Path.of(cmd.getOptionValue(pathOption)) : DEFAULT_STARTING_PATH)
                 .toAbsolutePath();
 
         int depth = cmd.hasOption(depthOption) ?
-                Integer.parseInt(cmd.getOptionValue(depthOption)) : Integer.MAX_VALUE;
+                Integer.parseInt(cmd.getOptionValue(depthOption)) : DEFAULT_MAXIMUM_DEPTH;
 
         return Optional.of(new TraversalDetails(filesAssociations, verbose, startingPath, depth));
     }
