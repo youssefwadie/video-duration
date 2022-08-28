@@ -1,8 +1,5 @@
 # video-duration
 Traverse the file system and calculate the videos' duration. 
-the functionality can be easily extended, just implement your own `FileScanner`.  
-see the [sample](/src/main/java/com/github/youssefwadie/durationcalculator/core/BasicScannersProvider.java#L8) and provide it to 
-the `FileWalker`, [here](/src/main/java/com/github/youssefwadie/durationcalculator/cli/Main.java#L13)
 
 #### Actual file tree
 ```bash
@@ -67,3 +64,8 @@ traverse the file system tree to calculate the total videos' duration
  -v,--verbose                print errors. (defaults to quite mode)
  -h,--help                   display this help and exit
 ```
+
+---
+The functionality can be easily extended, just implement your own `FileScanner`.  
+see the [sample](/src/main/java/com/github/youssefwadie/durationcalculator/core/BasicScannersProvider.java#L8) and provide it to
+the `FileWalker`, [here](/src/main/java/com/github/youssefwadie/durationcalculator/cli/Main.java#L13)
