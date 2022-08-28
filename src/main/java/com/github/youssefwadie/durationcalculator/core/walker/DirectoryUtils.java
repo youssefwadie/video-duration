@@ -44,14 +44,20 @@ public class DirectoryUtils {
         }
     }
 
-    public static String print(Directory parent, int level, WeightPrinter weightPrinter) {
+    public static String print(Directory parent, int level, WeightPrinter weightPrinter, boolean lastChild) {
         StringBuilder out = new StringBuilder();
         if (level != 0) {
             for (int i = 0; i < level; i++) {
                 out.append(COLORS[i % COLORS.length]).append("│   ");
             }
+            out.append(COLORS[level % COLORS.length]);
+            if (lastChild) {
+                out.append("└── ");
+            } else {
+                out.append("├── ");
+            }
 
-            out.append(COLORS[level % COLORS.length]).append("├── ").append(AnsiColors.RESET);
+            out.append(AnsiColors.RESET);
         }
 
         out.append(parent.getPath().getFileName()).append(": ")
@@ -59,8 +65,13 @@ public class DirectoryUtils {
                 .append('\n');
 
         parent.getChildren().sort(Comparator.comparing(Directory::getPath));
-        for (Directory child : parent.getChildren()) {
-            out.append(DirectoryUtils.print(child, level + 1, weightPrinter));
+        List<Directory> children = parent.getChildren();
+        int childIndex = 0;
+        for (Directory child : children) {
+            out.append(DirectoryUtils
+                    .print(child, level + 1, weightPrinter, childIndex == (children.size() - 1)));
+
+            childIndex++;
         }
 
         return out.toString();

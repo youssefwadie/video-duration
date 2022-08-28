@@ -36,7 +36,7 @@ public class FileWalker {
 //            DirectoryUtils.clean(fileTraverser.getRoot());
             visited = true;
         }
-        return DirectoryUtils.print(fileTraverser.getRoot(), 0, scanner.weightPrinter());
+        return DirectoryUtils.print(fileTraverser.getRoot(), 0, scanner.weightPrinter(), false);
     }
 
 }

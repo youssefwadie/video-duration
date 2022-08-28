@@ -2,7 +2,6 @@ package com.github.youssefwadie.durationcalculator.core.walker;
 
 import com.github.youssefwadie.durationcalculator.core.WeightCalculator;
 
-import java.awt.*;
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.FileVisitor;
@@ -53,7 +52,7 @@ class FileTraverser implements FileVisitor<Path> {
         if (attrs.isRegularFile() && file.getFileName().toString().matches(regex)) {
             long weight = 0;
             try {
-                weight = weightCalculator.apply(file);
+                weight = weightCalculator.calculate(file);
             } catch (Exception e) {
                 if (verbose) {
                     System.err.printf("%s%s%s%n", AnsiColors.RED, e.getMessage(), AnsiColors.RESET);

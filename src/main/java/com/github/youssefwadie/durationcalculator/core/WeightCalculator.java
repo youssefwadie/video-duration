@@ -4,5 +4,5 @@ import java.nio.file.Path;
 
 @FunctionalInterface
 public interface WeightCalculator {
-    long apply(Path file) throws Exception;
+    long calculate(Path file) throws Exception;
 }
