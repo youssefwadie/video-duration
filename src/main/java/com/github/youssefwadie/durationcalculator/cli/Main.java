@@ -28,7 +28,7 @@ public class Main {
     private static Optional<TraversalDetails> parseArgs(String... args) throws ParseException {
         final Option filesAssociationsOption = Option.builder()
                 .option("t").longOpt("types").argName("file-types").desc("file types to be scanned," +
-                        " multiple values whitespace separated, default is mp4 and mkv")
+                        " multiple values, whitespace separated. (default is mp4 and mkv)")
                 .numberOfArgs(Option.UNLIMITED_VALUES)
                 .valueSeparator(' ')
                 .build();
@@ -36,17 +36,17 @@ public class Main {
         final Option verboseOption = Option.builder()
                 .option("v").longOpt("verbose")
                 .hasArg(false).required(false)
-                .desc("print errors, default mode is quite").build();
+                .desc("print errors. (defaults to quite mode)").build();
 
 
         final Option pathOption = Option.builder()
                 .option("p").longOpt("path").hasArg()
                 .argName("starting-path")
-                .desc("starting path to traverse, default the current path").build();
+                .desc("starting path to traverse. (defaults to the current path)").build();
 
         final Option depthOption = Option.builder()
                 .option("d").longOpt("depth").hasArg()
-                .argName("depth").desc("maximum depth in the traversal, default is the maximum possible depth")
+                .argName("depth").desc("maximum depth in the traversal. (defaults to the maximum possible depth)")
                 .type(Integer.TYPE).build();
 
         final Option helpOption = Option.builder().

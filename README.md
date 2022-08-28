@@ -57,12 +57,13 @@ the `FileWalker`, [here](/src/main/java/com/github/youssefwadie/durationcalculat
 usage: videos-duration [-d <depth>] [-h] [-p <starting-path>] [-t
        <file-types>] [-v]
 traverse the file system tree to calculate the total videos' duration
- -p,--path <starting-path>   starting path to traverse, default the
-                             current path
- -t,--types <file-types>     file types to be scanned, multiple values
-                             whitespace separated, default is mp4 and mkv
- -d,--depth <depth>          maximum depth in the traversal, default is
-                             the maximum possible depth
- -v,--verbose                print errors, default mode is quite
+ -p,--path <starting-path>   starting path to traverse. (defaults to the
+                             current path)
+ -t,--types <file-types>     file types to be scanned, multiple values,
+                             whitespace separated. (default is mp4 and
+                             mkv)
+ -d,--depth <depth>          maximum depth in the traversal. (defaults to
+                             the maximum possible depth)
+ -v,--verbose                print errors. (defaults to quite mode)
  -h,--help                   display this help and exit
 ```
