@@ -13,9 +13,9 @@ public class Main {
     public static final String APP_NAME = "videos-duration";
 
     public static void main(String[] args) throws ParseException, IOException {
-        Optional<TraversalDetails> traversalDetailsOptional = parseArgs(args);
-        if (traversalDetailsOptional.isPresent()) {
-            FileWalker visitor = new FileWalker(traversalDetailsOptional.get(), BasicScannersProvider.videoScanner());
+        Optional<TraversalDetails> traversalDetails = parseArgs(args);
+        if (traversalDetails.isPresent()) {
+            FileWalker visitor = new FileWalker(traversalDetails.get(), BasicScannersProvider.videoScanner());
             String out = visitor.visit();
             System.out.println(out);
         }
