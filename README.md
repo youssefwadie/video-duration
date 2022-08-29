@@ -51,11 +51,11 @@ Traverse the file system and calculate the videos' duration.
 #### Run
 You can either compile and run the project with `exec-maven-plugin` or create an executable jar. 
 Creating a standalone executable jar can be difficult, as the `humble-video` 
-library use native libraries to work with video files, 
+library uses native libraries to work with video files, 
 but you can take a look at [install script](./install.sh) to see how this can be done.
 
 ##### To run with `exec-maven-plugin`
-```shell
+```bash
 mvn clean compile
 mvn -q exec:java -Dexec.args="-h"
 ```
@@ -63,7 +63,7 @@ mvn -q exec:java -Dexec.args="-h"
 ---
 
 #### Installation on a GNU/Linux System
-```shell
+```bash
 git clone https://github.com/youssefwadie/video-duration.git
 cd video-duration
 sh install.sh
