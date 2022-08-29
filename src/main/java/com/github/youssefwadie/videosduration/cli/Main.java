@@ -1,10 +1,10 @@
-package com.github.youssefwadie.durationcalculator.cli;
+package com.github.youssefwadie.videosduration.cli;
 
-import com.github.youssefwadie.durationcalculator.core.*;
-import com.github.youssefwadie.durationcalculator.core.walker.FileWalker;
+import com.github.youssefwadie.videosduration.core.*;
+import com.github.youssefwadie.videosduration.core.walker.FileWalker;
 import org.apache.commons.cli.*;
 
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Path;
 import java.util.Optional;
 

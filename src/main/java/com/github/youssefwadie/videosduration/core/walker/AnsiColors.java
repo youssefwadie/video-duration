@@ -1,4 +1,4 @@
-package com.github.youssefwadie.durationcalculator.core.walker;
+package com.github.youssefwadie.videosduration.core.walker;
 
 public final class AnsiColors {
     private AnsiColors() {

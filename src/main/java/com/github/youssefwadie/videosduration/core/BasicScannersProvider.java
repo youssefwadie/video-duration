@@ -1,4 +1,4 @@
-package com.github.youssefwadie.durationcalculator.core;
+package com.github.youssefwadie.videosduration.core;
 
 import io.humble.video.Demuxer;
 import io.humble.video.Global;
