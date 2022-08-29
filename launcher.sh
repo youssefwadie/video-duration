@@ -5,7 +5,7 @@ LIB_PATH="$HOME/.local/share/java/lib/"
 LIB_NAME="libhumblevideo.so"
 
 if [[ ! -f "$JAR_PATH/$JAR_NAME" ]]; then
-	echo "videos-duration.jar is not found" >&2
+	echo "$JAR_NAME is not found" >&2
 	exit 1
 fi
 
