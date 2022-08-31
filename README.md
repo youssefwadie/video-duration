@@ -72,8 +72,8 @@ video-duration -h
 
 ---
 #### Usage
-```bash
-usage: videos-duration [-d <depth>] [-h] [-p <starting-path>] [-t
+```
+usage: video-duration [-d <depth>] [-h] [-p <starting-path>] [-t
        <file-types>] [-v]
 traverse the file system tree to calculate the total videos' duration
  -p,--path <starting-path>   starting path to traverse. (defaults to the

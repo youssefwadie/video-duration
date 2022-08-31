@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public class Main {
     private static final String HEADER = "traverse the file system tree to calculate the total videos' duration";
-    public static final String APP_NAME = "videos-duration";
+    public static final String APP_NAME = "video-duration";
     public static final String[] DEFAULT_FILE_TYPES = new String[]{"mp4", "mkv"};
     private static final Path DEFAULT_STARTING_PATH = Path.of("");
     private static final int DEFAULT_MAXIMUM_DEPTH = Integer.MAX_VALUE;
