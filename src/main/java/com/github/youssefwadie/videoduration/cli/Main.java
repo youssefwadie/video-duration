@@ -6,6 +6,7 @@ import org.apache.commons.cli.*;
 
 import java.io.*;
 import java.nio.file.Path;
+import java.util.List;
 import java.util.Optional;
 
 public class Main {
@@ -75,9 +76,18 @@ public class Main {
 
         boolean verbose = cmd.hasOption(verboseOption);
 
-        Path startingPath = (cmd.hasOption(pathOption) ?
-                Path.of(cmd.getOptionValue(pathOption)) : DEFAULT_STARTING_PATH)
-                .toAbsolutePath();
+        Path startingPath = null;
+        if (cmd.hasOption(pathOption)) {
+            startingPath = Path.of(cmd.getOptionValue(pathOption));
+        } else {
+            List<String> argList = cmd.getArgList();
+            if (argList.size() != 0) {
+                String passedPathArg = String.join(File.pathSeparator, argList);
+                startingPath = Path.of(passedPathArg);
+            } else {
+                startingPath = DEFAULT_STARTING_PATH;
+            }
+        }
 
         int depth = cmd.hasOption(depthOption) ?
                 Integer.parseInt(cmd.getOptionValue(depthOption)) : DEFAULT_MAXIMUM_DEPTH;
