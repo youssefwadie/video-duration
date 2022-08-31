@@ -1,4 +1,4 @@
-package com.github.youssefwadie.videosduration.core;
+package com.github.youssefwadie.videoduration.core;
 
 @FunctionalInterface
 public interface WeightPrinter {

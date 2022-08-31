@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
-BUILD_JAR_NAME="videos-duration-1.0-SNAPSHOT-jar-with-dependencies.jar"
+BUILD_JAR_NAME="video-duration-1.0-SNAPSHOT-jar-with-dependencies.jar"
 JAR_INSTALLATION_PATH="$HOME/.local/jars"
-INSTALLED_JAR_NAME="videos-duration-1.0.jar"
+INSTALLED_JAR_NAME="video-duration-1.0.jar"
 
 LIB_INSTALLATION_PATH="$HOME/.local/share/java/lib"
 LIB_NAME="libhumblevideo.so"
 
 LAUNCHER_SCRIPT_NAME='launcher.sh'
 LAUNCHER_SCRIPT_INSTALLATION_PATH="$HOME/.local/bin"
-INSTALLED_LAUNCHER_SCRIPT_NAME='videos-duration'
+INSTALLED_LAUNCHER_SCRIPT_NAME='video-duration'
 
 set -e
 

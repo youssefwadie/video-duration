@@ -1,6 +1,6 @@
-package com.github.youssefwadie.videosduration.core.walker;
+package com.github.youssefwadie.videoduration.core.walker;
 
-import com.github.youssefwadie.videosduration.core.WeightCalculator;
+import com.github.youssefwadie.videoduration.core.WeightCalculator;
 
 import java.io.IOException;
 import java.nio.file.FileVisitResult;

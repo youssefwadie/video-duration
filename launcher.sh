@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 JAR_PATH="$HOME/.local/jars/"
-JAR_NAME="videos-duration-1.0.jar"
+JAR_NAME="video-duration-1.0.jar"
 LIB_PATH="$HOME/.local/share/java/lib/"
 LIB_NAME="libhumblevideo.so"
 

@@ -1,7 +1,7 @@
-package com.github.youssefwadie.videosduration.core.walker;
+package com.github.youssefwadie.videoduration.core.walker;
 
-import com.github.youssefwadie.videosduration.core.TraversalDetails;
-import com.github.youssefwadie.videosduration.core.FileScanner;
+import com.github.youssefwadie.videoduration.core.TraversalDetails;
+import com.github.youssefwadie.videoduration.core.FileScanner;
 
 import java.io.IOException;
 import java.nio.file.FileVisitOption;

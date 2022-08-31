@@ -1,7 +1,7 @@
-package com.github.youssefwadie.videosduration.cli;
+package com.github.youssefwadie.videoduration.cli;
 
-import com.github.youssefwadie.videosduration.core.*;
-import com.github.youssefwadie.videosduration.core.walker.FileWalker;
+import com.github.youssefwadie.videoduration.core.*;
+import com.github.youssefwadie.videoduration.core.walker.FileWalker;
 import org.apache.commons.cli.*;
 
 import java.io.*;

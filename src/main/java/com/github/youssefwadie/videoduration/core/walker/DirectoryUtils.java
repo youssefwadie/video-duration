@@ -1,7 +1,7 @@
-package com.github.youssefwadie.videosduration.core.walker;
+package com.github.youssefwadie.videoduration.core.walker;
 
 
-import com.github.youssefwadie.videosduration.core.WeightPrinter;
+import com.github.youssefwadie.videoduration.core.WeightPrinter;
 
 import java.nio.file.Path;
 import java.util.Comparator;

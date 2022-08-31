@@ -67,7 +67,7 @@ mvn -q exec:java -Dexec.args="-h"
 git clone https://github.com/youssefwadie/video-duration.git
 cd video-duration
 sh install.sh
-videos-duration -h
+video-duration -h
 ```
 
 ---
@@ -91,5 +91,5 @@ traverse the file system tree to calculate the total videos' duration
 
 
 The functionality can be easily extended, just implement your own `FileScanner`.  
-see the [sample](/src/main/java/com/github/youssefwadie/videosduration/core/BasicScannersProvider.java#L8) and provide it to
-the `FileWalker`, [here](/src/main/java/com/github/youssefwadie/videosduration/cli/Main.java#L21)
+see the [sample](/src/main/java/com/github/youssefwadie/videoduration/core/BasicScannersProvider.java#L8) and provide it to
+the `FileWalker`, [here](/src/main/java/com/github/youssefwadie/videoduration/cli/Main.java#L21)
