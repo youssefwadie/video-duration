@@ -82,8 +82,7 @@ public class Main {
         } else {
             List<String> argList = cmd.getArgList();
             if (argList.size() != 0) {
-                String passedPathArg = String.join(File.pathSeparator, argList);
-                startingPath = Path.of(passedPathArg);
+                startingPath = Path.of(argList.get(0));
             } else {
                 startingPath = DEFAULT_STARTING_PATH;
             }
