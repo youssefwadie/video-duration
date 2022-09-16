@@ -3,7 +3,7 @@ package com.github.youssefwadie.videoduration.core;
 import io.humble.video.Demuxer;
 import io.humble.video.Global;
 
-public class BasicScannersProvider {
+public class ScannerProvider {
 
     public static FileScanner videoScanner() {
         final WeightCalculator videoDurationCalculator = file -> {

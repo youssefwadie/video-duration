@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) throws ParseException, IOException {
         Optional<TraversalDetails> traversalDetails = parseArgs(args);
         if (traversalDetails.isPresent()) {
-            FileWalker visitor = new FileWalker(traversalDetails.get(), BasicScannersProvider.videoScanner());
+            FileWalker visitor = new FileWalker(traversalDetails.get(), ScannerProvider.videoScanner());
             String out = visitor.visit();
             System.out.println(out);
         }

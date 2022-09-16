@@ -1,6 +1,9 @@
 package com.github.youssefwadie.videoduration.core.walker;
 
 import com.github.youssefwadie.videoduration.core.WeightCalculator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
@@ -49,13 +52,28 @@ class FileTraverser implements FileVisitor<Path> {
         Objects.requireNonNull(file);
         Objects.requireNonNull(attrs);
 
-        if (attrs.isRegularFile() && file.getFileName().toString().matches(regex)) {
+        String fileName = file.getFileName().toString();
+        if (attrs.isRegularFile() && fileName.matches(regex)) {
             long weight = 0;
             try {
                 weight = weightCalculator.calculate(file);
             } catch (Exception e) {
                 if (verbose) {
-                    System.err.printf("%s%s%s%n", AnsiColors.RED, e.getMessage(), AnsiColors.RESET);
+                    final Throwable cause = e.getCause();
+                    if (cause != null) {
+                        System.err.printf("%s%s - %s caused by %s%s%n",
+                                AnsiColors.RED,
+                                fileName,
+                                e.getMessage(),
+                                cause.getMessage(),
+                                AnsiColors.RESET);
+                    } else {
+                        System.err.printf("%s%s - %s%s%n",
+                                AnsiColors.RED,
+                                fileName,
+                                e.getMessage(),
+                                AnsiColors.RESET);
+                    }
                 }
             }
             currentVisitedDirectory.addToWeight(weight);
